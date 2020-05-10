@@ -8,7 +8,7 @@ import Todos from "./snippets/Todos";
 import ExamSchedule from "./snippets/ExamSchedule";
 import Subjects from "./snippets/Subjects";
 import IntroBox from "./snippets/IntroBox";
-import TittleExpansion from "../../logic/TittleExpansion";
+import TittleExpansion from "../logic/TittleExpansion";
 import "react-circular-progressbar/dist/styles.css";
 import "../../styles/dashboard.css";
 

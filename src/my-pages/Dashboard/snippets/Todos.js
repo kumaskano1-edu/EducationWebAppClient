@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DateDifference from "../../../logic/DateDifference";
-import TittleExpansion from "../../../logic/TittleExpansion";
+import DateDifference from "../../logic/DateDifference";
+import TittleExpansion from "../../logic/TittleExpansion";
 export default class Todos extends Component {
   constructor(props) {
     super(props);

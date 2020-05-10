@@ -5,7 +5,7 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem,
 } from "mdbreact";
-import TittleExpansion from "../../../logic/TittleExpansion";
+import TittleExpansion from "../../logic/TittleExpansion";
 class ExamSchedule extends Component {
   constructor(props) {
     super(props);

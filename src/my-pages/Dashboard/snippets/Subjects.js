@@ -8,7 +8,7 @@ import {
   MDBRow,
   MDBCol,
 } from "mdbreact";
-import TittleExpansion from "../../../logic/TittleExpansion";
+import TittleExpansion from "../../logic/TittleExpansion";
 class Subjects extends Component {
   render() {
     return (
