@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from "./my-pages/Dashboard/Dashboard";
 import Authentication from "./my-pages/Authentication/Authentication";
 import ProfileSettings from "./my-pages/ProfileSettings/ProfileSettings";
-import Register from "./my-pages/Authentication/snippets/Register";
+//import Register from "./my-pages/Authentication/snippets/Register";
 import SubjectPage from "./my-pages/SubjectPage/SubjectPage";
 import Tasks from "./my-pages/Tasks/Tasks";
 

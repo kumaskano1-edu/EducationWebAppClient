@@ -19,7 +19,7 @@ export const LOGIN = gql`
   mutation LoginMutation($email: String!, $password: String!) {
     loginUser(email: $email, password: $password) {
       id
-      payload
+      token
     }
   }
 `;
