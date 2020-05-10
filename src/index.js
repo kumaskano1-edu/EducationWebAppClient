@@ -20,7 +20,7 @@ const link = createHttpLink({
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link,
-  credentials: "include",
+  credentials: "same-origin",
   onError: (e) => {
     console.log(e);
   },
