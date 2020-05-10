@@ -21,11 +21,6 @@ class Login extends React.Component {
       [name]: value,
     });
   }
-  componentWillUnmount() {
-    if (this.state.registrationError != null) {
-      return <Redirect to="/dashboard" />;
-    }
-  }
 
   render() {
     const errorMessage =
