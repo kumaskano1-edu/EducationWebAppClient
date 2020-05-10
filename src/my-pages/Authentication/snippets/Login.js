@@ -12,11 +12,10 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
+      registrationError: null,
     };
   }
-  handleSucess(data) {
-    cookies.set("token", data.loginUser.token);
-  }
+
   handleChange(e) {
     const { value, name } = e.target;
     this.setState({
@@ -25,6 +24,8 @@ class Login extends React.Component {
   }
 
   render() {
+    const errorMessage =
+      this.state.registrationError != null ? "d-block" : "d-none";
     return (
       <div className="form-items modern">
         <h3>Login to account</h3>
@@ -34,7 +35,15 @@ class Login extends React.Component {
         <div>
           <Mutation
             mutation={LOGIN}
-            onCompleted={(data) => this.handleSucess(data)}
+            onCompleted={(data) => {
+              cookies.set("token", data.loginUser.token);
+            }}
+            onError={(error) => {
+              this.setState({
+                registrationError: error,
+              });
+              console.log(error);
+            }}
           >
             {(loginUser, { data, error }) => (
               <form
@@ -48,7 +57,6 @@ class Login extends React.Component {
                   });
                 }}
               >
-                {error && <p>Error :( Please try again</p>}
                 <input
                   className="form-control"
                   type="text"
@@ -67,11 +75,14 @@ class Login extends React.Component {
                   required
                   onChange={(e) => this.handleChange(e)}
                 />
-                <div
-                  className={`animated fadeIn error-message error mb-2 float-left`}
-                >
-                  * Credentials are wrong
-                </div>
+                {this.state.registrationError != null && (
+                  <div
+                    className={`animated fadeIn ${errorMessage} error-message error mb-2 float-left`}
+                  >
+                    There was something wrong in our servers!
+                  </div>
+                )}
+
                 <div className="forgotAndRemember d-inline-block">
                   <div className="custom-control custom-checkbox float-left">
                     <input
