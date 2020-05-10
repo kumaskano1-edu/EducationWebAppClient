@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/dashboard.css";
+import "../../../styles/dashboard.css";
 import moment from "moment";
 export default class SmallCalendar extends React.Component {
   weekdayshort = moment.weekdaysShort();

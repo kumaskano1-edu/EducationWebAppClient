@@ -1,7 +1,7 @@
 import React from "react";
 import { Mutation } from "@apollo/react-components";
 
-import { LOGIN } from "../../redux/authentication/AuthReducers";
+import { LOGIN } from "../../../redux/AuthReducers";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -23,15 +23,10 @@ class Login extends React.Component {
       <div className="form-items modern">
         <h3>Login to account</h3>
         <p className="mb-5 greyFont">
-          Access to the most powerfull tool in the entire design and web
-          industry.
+          Access to the most powerfull tool for student time management
         </p>
         <div>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <form>
             <input
               className="form-control"
               type="text"

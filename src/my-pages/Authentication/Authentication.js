@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../styles/constants.css";
-import "../styles/auth.css";
-import Login from "../snippets/authentication/Login";
-import Register from "../snippets/authentication/Register";
+import "../../styles/constants.css";
+import "../../styles/auth.css";
+import Login from "./snippets/Login";
+import Register from "./snippets/Register";
 class Authentication extends Component {
   constructor(props) {
     super(props);

@@ -8,8 +8,7 @@ import {
   MDBRow,
   MDBCol,
 } from "mdbreact";
-import TittleExpansion from "../logic/TittleExpansion";
-import "../styles/dashboard.css";
+import TittleExpansion from "../../../logic/TittleExpansion";
 class Subjects extends Component {
   render() {
     return (
@@ -36,7 +35,7 @@ function Subject(props) {
         <div className="SubjectImage">
           <img
             class="fir-author-image fir-clickcircle"
-            src={require("../assets/SubjectLetters/P.svg")}
+            src={require("../../../assets/SubjectLetters/P.svg")}
             alt="Physics"
           />
         </div>

@@ -12,7 +12,6 @@ import { onError } from "apollo-link-error";
 import { ApolloLink } from "apollo-link";
 
 import App from "./App";
-import Authentication from "./my-pages/Authentication";
 
 import registerServiceWorker from "./registerServiceWorker";
 const link = createHttpLink({

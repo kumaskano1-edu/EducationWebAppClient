@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { MDBRow, MDBCol } from "mdbreact";
-import Navbar from "../snippets/Navbar";
-import SmallCalendar from "../snippets/SmallCalendar";
-import Projects from "../snippets/Projects";
-import DashboardChart from "../snippets/DashboardChart";
-import Todos from "../snippets/Todos";
-import ExamSchedule from "../snippets/ExamSchedule";
-import Subjects from "../snippets/Subjects";
-import IntroBox from "../snippets/IntroBox";
-import TittleExpansion from "../logic/TittleExpansion";
+import Navbar from "../Navbar";
+import SmallCalendar from "./snippets/SmallCalendar";
+import Projects from "./snippets/Projects";
+import DashboardChart from "./snippets/DashboardChart";
+import Todos from "./snippets/Todos";
+import ExamSchedule from "./snippets/ExamSchedule";
+import Subjects from "./snippets/Subjects";
+import IntroBox from "./snippets/IntroBox";
+import TittleExpansion from "../../logic/TittleExpansion";
 import "react-circular-progressbar/dist/styles.css";
-import "../styles/dashboard.css";
+import "../../styles/dashboard.css";
 
 class Dashboard extends Component {
   constructor(props) {

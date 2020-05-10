@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Dashboard from "./my-pages/Dashboard";
-import Navbar from "./snippets/Navbar";
 import Router from "./Router";
 class App extends Component {
   render() {

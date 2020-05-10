@@ -3,9 +3,9 @@ import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from "react-circular-progressbar";
-import RadialSeparators from "../snippets/RadialSeparators";
-import TittleExpansion from "../logic/TittleExpansion";
-import DateDifference from "../logic/DateDifference";
+import RadialSeparators from "./RadialSeparators";
+import TittleExpansion from "../../../logic/TittleExpansion";
+import DateDifference from "../../../logic/DateDifference";
 import { MDBRow, MDBCol } from "mdbreact";
 class Projects extends Component {
   constructor(props) {

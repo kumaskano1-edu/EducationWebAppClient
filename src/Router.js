@@ -2,14 +2,14 @@ import React from "react";
 import Cookies from "js-cookie";
 
 import { Route, Switch, Redirect } from "react-router-dom";
-import Dashboard from "./my-pages/Dashboard";
-import Authentication from "./my-pages/Authentication";
-import ProfileSettings from "./my-pages/ProfileSettings";
-import Register from "./snippets/authentication/Register";
-import SubjectPage from "./my-pages/SubjectPage";
-import Tasks from "./my-pages/Tasks";
+import Dashboard from "./my-pages/Dashboard/Dashboard";
+import Authentication from "./my-pages/Authentication/Authentication";
+import ProfileSettings from "./my-pages/ProfileSettings/ProfileSettings";
+import Register from "./my-pages/Authentication/snippets/Register";
+import SubjectPage from "./my-pages/SubjectPage/SubjectPage";
+import Tasks from "./my-pages/Tasks/Tasks";
 
-import StatisticPage from "./my-pages/Statistics";
+import StatisticPage from "./my-pages/Statistics/Statistics";
 
 class Router extends React.Component {
   constructor(props) {
