@@ -1,0 +1,40 @@
+1. Need to adjust css to fit all elements withing the screen
+2. Improve css of Todos, it has problems with responsiveness
+3. Review the code, only visuals.
+4. think about changing calendar to add subject, todo buttons
+START WORKING ON FUNCTIONING OF THE WEBSITE
+Work with fakse database like json database
+PROJECT KEY FEATURES:
+1. add, change and remove assignments, exams and projects
+2. analyze amount of todos done everyday, which subjects and projects done for
+3. time management functions that will take todos and exams difficulty level and create a plan for everyday
+4. seting goals, and also changing time balance for specific criterias
+5. output the chart with todos for today with goals, exams and schedule modules
+
+
+PROJECTS:
+1. closing greeting box when x is pressed, and encrease number of projects
+2. Projects:
+    Animation of progress ring feeling up
+    If no projects, show no projects text!
+    Make the div pressable and summon modal that will show the project info:
+        title, descprtion, progress ring
+        edit project, encrease percentage done by the togler, finished project, delete project
+        when person completes the project it outputs completed and it dissapears from the dashboard
+    when pressed show all, animation of appearing projects. 
+    then show all changes to show less
+EXAMS:
+1. On press toggle modal with information, that can be changed
+2. On show all, show all exams sorted by dates
+3. Dropdown:
+    1. edit exam
+    2. delete exam, with modal poping out {are you sure?}
+    3. exam completed, modal poping out {which grade recieved?}
+CHART:  
+1. on show all redirect to the page
+    1. This chart, chart with grades, diamond chart for showing todos per subjects and how inclined are they
+    2.all charts will have input fields where users can manipulate data
+TODOS:  
+1. on press toggle modal with the todo information and ability to change data, delete data, complete todo
+2. on show all show all todos
+3. when complete button pressed, finished text is shown, todo is transported to the top, and x icon gets at the top, if user presses it the todo dissapears and deletes from the database

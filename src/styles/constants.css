@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Comic+Neue:wght@300&display=swap");
+
+/*Fonts*/
+.modern {
+  font-family: "Baloo Thambi 2", cursive;
+}
+
+/*FONT WEIGHT*/
+.bold {
+  font-weight: 700;
+
+}
+
+/*FONT-SIZES*/
+.titleFont {
+  font-size: 1rem;
+}
+
+.afterFont {}
+
+.descriptionFont {}
+
+.notice {
+  font-size: 0.2rem;
+}
+
+/*Colors*/
+.greyFont {
+  color: #747373;
+}
+
+.whiteFont {
+  color: white;
+}
+
+/*Backgrounds*/
+.primaryTheme {
+  background-image: linear-gradient(109.6deg, rgba(125, 89, 252, 0.8) 11.2%, #7279ff 91.1%);
+}
+
+.secondary {
+  background: linear-gradient(90deg,
+      rgba(249, 181, 27, 1) 35%,
+      rgba(247, 208, 80, 1) 87%);
+}
+
+/*Functions and Icons*/
+.closingIcon {
+  cursor: pointer;
+}
+
+/*Dropdown none */
+
+.dropleft .dropdown-toggle::before {
+  display: none;
+}
+
+.dropdown-toggle:after {
+  display: none;
+}

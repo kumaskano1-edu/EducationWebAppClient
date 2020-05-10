@@ -1,0 +1,353 @@
+/*Main Dashboard css*/
+
+/*GREETINGS*/
+.IntroBoxInner {
+  border-radius: 10px;
+}
+
+.Greetings {
+  display: inline-block;
+  min-width: 100%;
+}
+
+/*Title*/
+.titles {
+  display: inline-flex;
+  width: 100%;
+  max-height: 2rem;
+}
+
+.SubjectTitle {
+  float: left;
+  width: 50%;
+  font-size: 19px;
+}
+
+.LinkShow {
+  float: right;
+  right: 0;
+  width: 50%;
+  font-size: 15px;
+}
+
+/*PROJECT PROGRESS*/
+.projectPorgress {
+  display: inline-block;
+  min-width: 100%;
+  border-radius: 1rem;
+}
+
+.projectPorgress:hover {
+  transform: scale(1.02);
+  transition: all 0.5s;
+  transition-duration: 0.5s;
+}
+
+.progressBar {
+  width: 3rem;
+  width: 18%;
+}
+
+.ProjectInfo {
+  width: 75%;
+  margin-bottom: -15px;
+}
+
+.ProjectTittle {
+  font-size: 2.5vh;
+}
+
+.ProjectSubjects {
+  margin-top: -10px;
+  font-size: 15px;
+}
+
+.ProjectDescription {
+  margin-top: -20px;
+  font-size: 13px;
+}
+
+/*EXAM CARDS*/
+.cardCustom {
+  box-shadow: none;
+}
+
+.FirstSubject {
+  color: white;
+}
+
+.innerCardExams {
+  display: inline;
+  width: 100%;
+}
+
+.TextsInnerCardExams {
+  position: relative;
+  top: 1vh;
+}
+
+.SubjectTittle {
+  float: left;
+  width: 31%;
+}
+
+.DayofWeek {
+  float: left;
+  width: 14%;
+}
+
+.Professor {
+  float: left;
+  width: 25%;
+}
+
+.timeOfExam {
+  float: right;
+  width: 20%;
+  padding: 0;
+}
+
+.MenuTogler {
+  float: right;
+  width: 10%;
+}
+
+/*ASSIGNMENTS AND TODOS*/
+
+.assignmentCard {
+  box-shadow: 0.1rem 0.12rem 0.11rem 0.11rem rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
+  min-width: 100%;
+  padding: 7px;
+}
+
+.assignmentCard:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.innerCard {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.Indicator {
+  width: 3%;
+  font-size: 0.5rem;
+  position: relative;
+  top: 1vh;
+  float: left;
+}
+
+.UndoneIndicator {
+  color: #f8c722;
+}
+
+.DoneIndicator {
+  color: #8db98d;
+}
+
+.TodoSubject {
+  width: 24%;
+  float: left;
+}
+
+.TodoTittle {
+  width: 45%;
+  float: left;
+}
+
+.timeOfExam {
+  width: 15%;
+  float: left;
+}
+
+.State {
+  width: 13%;
+  float: right;
+  font-size: 0.95rem;
+  position: relative;
+  top: 0.6vh;
+}
+
+.Undone {}
+
+.Done {
+  color: #8db98d;
+  font-weight: 500;
+}
+
+.customButton {
+  min-width: 100%;
+  border-radius: 20px;
+  transition: all 1s;
+  border: 1px solid #f8c722;
+  color: #f8c722;
+  background: white;
+  padding: 5px;
+}
+
+.FinishedButton {
+  border: none;
+  font-size: 1rem;
+  color: #8db98d;
+}
+
+.customButton:hover {
+  transition: all 1s;
+  background: linear-gradient(90deg,
+      rgba(249, 181, 27, 1) 35%,
+      rgba(247, 208, 80, 1) 87%);
+  color: white;
+}
+
+.below {
+  font-size: 11px;
+}
+
+.assignmentCard.highlighted {
+  color: white;
+}
+
+.assignmentCard.highlighted .below {
+  color: white;
+}
+
+.assignmentCard.highlighted .customButton {
+  background: linear-gradient(90deg,
+      rgba(249, 181, 27, 1) 35%,
+      rgba(247, 208, 80, 1) 87%);
+
+  color: white;
+}
+
+/*SUBJECTS*/
+.innerSubjects {
+  padding-top: 3px;
+}
+
+.fir-image-figure {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12.5px;
+  position: relative;
+  text-decoration: none;
+}
+
+.SubjectCardTittle {
+  min-width: 75%;
+  max-width: 75%;
+}
+
+.SubjectImage {
+  min-width: 15%;
+  max-width: 15%;
+}
+
+.togleMenuSubjects {
+  min-width: 10%;
+  max-width: 10%;
+}
+
+.toggleMenu {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 0px 40px 0px black, 0px 80px 0px black;
+}
+
+.fir-clickcircle {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.fir-image-figure .caption,
+.fir-image-figure figcaption {
+  padding-left: 15px;
+}
+
+figcaption {
+  max-width: 90%;
+  min-width: 90%;
+}
+
+.fig-author-figure-title {
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+
+.dropdownTogggle {
+  position: relative;
+  right: 10px;
+}
+
+/*SMAL CALENDAR*/
+.small-calendar {
+  padding: 20px;
+}
+
+.calendar-day {
+  min-width: 100%;
+  border-bottom: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.calendar-day-number.today {
+  min-height: 1.7rem;
+  max-width: 2.1rem;
+  color: black;
+  padding: 4px;
+  height: 100%;
+  background-image: linear-gradient(to right top,
+      #9b9efc,
+      #8e92fd,
+      #8186fe,
+      #7279ff,
+      #636dff);
+  border-radius: 50%;
+  color: white;
+}
+
+@media only screen and (max-width: 575px) {
+  .State {
+    display: none;
+    width: 0;
+  }
+
+  .TodoTittle {
+    width: 55%;
+  }
+
+  .TodoSubject {
+    width: 25%;
+  }
+
+  .timeOfExam {
+    width: 15%;
+  }
+}
+
+@media only screen and (min-width: 575px) and (max-width: 888px) {
+  .small-calendar {
+    padding: 0;
+    border-top: none;
+  }
+
+  .calendar-day-number.today {
+    padding: 2px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .small-calendar {
+    margin-top: 15px;
+  }
+
+  .calendar-day-number.today {
+    max-height: 30px;
+  }
+}
