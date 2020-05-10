@@ -1,0 +1,7 @@
+On Saturday 05:
+    Create the Login Form, IMPLEMENTED the mutation from the graphql server
+
+    Problems to solve;
+        Find the way to redirect to dashboard after Login
+        create the user from the registration class
+        find way to merge login and registration components into one

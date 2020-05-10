@@ -5,7 +5,6 @@ import { Redirect } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { LOGIN } from "../../../redux/AuthReducers";
 const cookies = new Cookies();
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +20,11 @@ class Login extends React.Component {
     this.setState({
       [name]: value,
     });
+  }
+  componentWillUnmount() {
+    if (this.state.registrationError != null) {
+      return <Redirect to="/dashboard" />;
+    }
   }
 
   render() {
