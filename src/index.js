@@ -12,17 +12,29 @@ import { createHttpLink } from "apollo-link-http";
 import App from "./App";
 
 import registerServiceWorker from "./registerServiceWorker";
+const cache = new InMemoryCache();
 const link = createHttpLink({
   uri: "http://localhost:4000/",
+  headers: {
+    authorization: localStorage.getItem("token"),
+  },
   credentials: "same-origin",
 });
 
 const client = new ApolloClient({
-  cache: new InMemoryCache(),
+  cache,
   link,
-  credentials: "same-origin",
-  onError: (e) => {
-    console.log(e);
+  clientState: {
+    defaults: {
+      authenticated: false,
+      token: null,
+      subjects: [],
+    },
+  },
+});
+cache.writeData({
+  data: {
+    token: !!localStorage.getItem("token"),
   },
 });
 ReactDOM.render(
