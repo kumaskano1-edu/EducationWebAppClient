@@ -1,10 +1,7 @@
 import React from "react";
-import { useMutation, Mutation } from "react-apollo";
+import { Mutation } from "react-apollo";
 import { Redirect } from "react-router-dom";
-
-import Cookies from "universal-cookie";
 import { LOGIN } from "../../../redux/AuthReducers";
-const cookies = new Cookies();
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +9,7 @@ class Login extends React.Component {
       email: "",
       password: "",
       registrationError: null,
+      authenticated: false,
     };
   }
 
@@ -23,6 +21,9 @@ class Login extends React.Component {
   }
 
   render() {
+    if (this.state.authenticated) {
+      return <Redirect to="/dashboard" />;
+    }
     const errorMessage =
       this.state.registrationError != null ? "d-block" : "d-none";
     return (
@@ -35,7 +36,8 @@ class Login extends React.Component {
           <Mutation
             mutation={LOGIN}
             onCompleted={(data) => {
-              cookies.set("token", data.loginUser.token);
+              localStorage.setItem("token", data.loginUser.token);
+              this.setState({ authenticated: true });
             }}
             onError={(error) => {
               this.setState({
@@ -78,7 +80,9 @@ class Login extends React.Component {
                   <div
                     className={`animated fadeIn ${errorMessage} error-message error mb-2 float-left`}
                   >
-                    There was something wrong in our servers!
+                    {this.state.registrationError.graphQLErrors.map(
+                      (x) => x.message
+                    )}
                   </div>
                 )}
 
