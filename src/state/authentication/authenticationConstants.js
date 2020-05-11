@@ -23,3 +23,9 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const IS_AUTHENTICATED = gql`
+  query {
+    isAuthenticated @client
+  }
+`;

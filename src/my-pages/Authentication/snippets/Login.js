@@ -1,7 +1,10 @@
 import React from "react";
-import { Mutation } from "react-apollo";
+import { Mutation, Query } from "react-apollo";
 import { Redirect } from "react-router-dom";
-import { LOGIN } from "../../../redux/AuthReducers";
+import {
+  LOGIN,
+  IS_AUTHENTICATED,
+} from "../../../state/authentication/authenticationConstants";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +15,6 @@ class Login extends React.Component {
       authenticated: false,
     };
   }
-
   handleChange(e) {
     const { value, name } = e.target;
     this.setState({
@@ -28,6 +30,12 @@ class Login extends React.Component {
       this.state.registrationError != null ? "d-block" : "d-none";
     return (
       <div className="form-items modern">
+        <Query query={IS_AUTHENTICATED}>
+          {({ loading, error, data }) => {
+            console.log(data);
+            return null;
+          }}
+        </Query>
         <h3>Login to account</h3>
         <p className="mb-5 greyFont">
           Access to the most powerfull tool for student time management

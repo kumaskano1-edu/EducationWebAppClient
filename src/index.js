@@ -8,7 +8,7 @@ import { ApolloClient } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
-
+import { withClientState } from "apollo-link-state";
 import App from "./App";
 
 import registerServiceWorker from "./registerServiceWorker";
@@ -21,20 +21,21 @@ const link = createHttpLink({
   credentials: "same-origin",
 });
 
+const stateLink = withClientState({
+  cache,
+  defaults: {
+    isAuthenticated: false,
+    subjects: [],
+  },
+});
 const client = new ApolloClient({
   cache,
+  stateLink,
   link,
-  clientState: {
-    defaults: {
-      authenticated: false,
-      token: null,
-      subjects: [],
-    },
-  },
 });
 cache.writeData({
   data: {
-    token: !!localStorage.getItem("token"),
+    isAuthenticated: !!localStorage.getItem("token"),
   },
 });
 ReactDOM.render(
