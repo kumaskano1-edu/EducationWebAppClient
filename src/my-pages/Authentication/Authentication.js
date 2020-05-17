@@ -7,7 +7,7 @@ class Authentication extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: true,
+      login: false,
     };
   }
   render() {
@@ -29,8 +29,10 @@ class Authentication extends Component {
                 </div>
               </div>
             </div>
-            <div className="text-cente    r mt-10 w-100">
-              Don't have an account? <a href="#nothing">Register here</a>
+            <div className="mt-10 w-100">
+              {this.state.login
+                ? "Dont have an account REGISTER"
+                : "Already have an account LOGIN"}
             </div>
           </div>
         </div>
