@@ -12,8 +12,13 @@ class Login extends React.Component {
       email: "",
       password: "",
       registrationError: null,
+      loading: false,
       authenticated: false,
     };
+  }
+  handleButton() {
+    this.setState({ loading: true });
+    console.log(this.state.loading);
   }
   handleChange(e) {
     const { value, name } = e.target;
@@ -32,7 +37,6 @@ class Login extends React.Component {
       <div className="form-items modern">
         <Query query={IS_AUTHENTICATED}>
           {({ loading, error, data }) => {
-            console.log(data);
             return null;
           }}
         </Query>
@@ -43,15 +47,19 @@ class Login extends React.Component {
         <div>
           <Mutation
             mutation={LOGIN}
+            onStart={(loading) => {
+              this.setState({ loading: true });
+              console.log(this.state.loading);
+            }}
             onCompleted={(data) => {
               localStorage.setItem("token", data.loginUser.token);
-              this.setState({ authenticated: true });
+              this.setState({ loading: false, authenticated: true });
             }}
             onError={(error) => {
               this.setState({
+                loading: false,
                 registrationError: error,
               });
-              console.log(error);
             }}
           >
             {(loginUser, { data, error }) => (
@@ -84,6 +92,7 @@ class Login extends React.Component {
                   required
                   onChange={(e) => this.handleChange(e)}
                 />
+                {this.state.loading && "Loading..."}
                 {this.state.registrationError != null && (
                   <div
                     className={`animated fadeIn ${errorMessage} error-message error mb-2 float-left`}
@@ -110,7 +119,12 @@ class Login extends React.Component {
                   </div>
                 </div>
                 <div className="form-button mt-3 w-100">
-                  <button className="buttonSubmit">Login</button>
+                  <button
+                    onClick={() => this.handleButton()}
+                    className="buttonSubmit"
+                  >
+                    Login
+                  </button>
                 </div>
               </form>
             )}

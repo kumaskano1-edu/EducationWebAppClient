@@ -14,7 +14,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 const cache = new InMemoryCache();
 const link = createHttpLink({
-  uri: "http://localhost:4000/",
+  uri: "https://go-study-backend.herokuapp.com/",
   headers: {
     authorization: localStorage.getItem("token"),
   },
