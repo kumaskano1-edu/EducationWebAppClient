@@ -61,11 +61,6 @@ class Register extends React.Component {
       !this.state.success && this.state.background !== "" ? "passNoMatch" : "";
     return (
       <div className="form-items modern">
-        <h3>Create your account</h3>
-        <p className="mb-4 greyFont">
-          Let this technology help you to achieve academic success! Let the
-          knowledge come with you
-        </p>
         <form>
           <div className="row">
             <div className="col-md-6 inputBox">

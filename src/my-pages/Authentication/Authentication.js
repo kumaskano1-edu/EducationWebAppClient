@@ -7,9 +7,10 @@ class Authentication extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: false,
+      login: true,
     };
   }
+  loginOrRegister() {}
   render() {
     return (
       <div className="authentication modern animated fadeIn">
@@ -25,14 +26,32 @@ class Authentication extends Component {
               </div>
               <div className="auth">
                 <div className="pointer mr2 button">
+                  <h4>
+                    {this.state.login
+                      ? "Login to your account"
+                      : "Register your account"}
+                  </h4>
+                  <p className="mb-4 greyFont">
+                    Acess the most powerful technology for student life
+                  </p>{" "}
                   {this.state.login ? <Login /> : <Register />}
                 </div>
               </div>
             </div>
             <div className="mt-10 w-100">
-              {this.state.login
-                ? "Dont have an account REGISTER"
-                : "Already have an account LOGIN"}
+              {this.state.login ? (
+                <span>
+                  Dont have an account?{" "}
+                  <a onClick={() => this.setState({ login: false })}>
+                    Register
+                  </a>
+                </span>
+              ) : (
+                <span>
+                  Already have an account?{" "}
+                  <a onClick={() => this.setState({ login: true })}>Login</a>
+                </span>
+              )}
             </div>
           </div>
         </div>

@@ -40,10 +40,6 @@ class Login extends React.Component {
             return null;
           }}
         </Query>
-        <h3>Login to account</h3>
-        <p className="mb-5 greyFont">
-          Access to the most powerfull tool for student time management
-        </p>
         <div>
           <Mutation
             mutation={LOGIN}
