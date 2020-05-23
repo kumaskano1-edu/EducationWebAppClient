@@ -1,6 +1,5 @@
 import React from "react";
 import { Mutation } from "react-apollo";
-import { Redirect } from "react-router-dom";
 import { LOGIN } from "../../../state/authentication/authenticationConstants";
 import { connect } from "react-redux";
 
@@ -27,16 +26,7 @@ class Login extends React.Component {
       [name]: value,
     });
   }
-  componentDidMount() {
-    // If logged in and user navigates to Login page, should redirect them to dashboard
-    if (this.props.state.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
-  }
   render() {
-    if (this.props.state.auth.isAuthenticated) {
-      return <Redirect to="/dashboard" />;
-    }
     const errorMessage =
       this.state.registrationError != null ? "d-block" : "d-none";
     return (

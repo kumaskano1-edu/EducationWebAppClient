@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../../styles/constants.css";
 import "../../styles/auth.css";
 import Login from "./snippets/Login";
+import { Redirect } from "react-router-dom";
+
 import Register from "./snippets/Register";
 import { connect } from "react-redux";
 
@@ -15,6 +17,9 @@ class Authentication extends Component {
   }
   loginOrRegister() {}
   render() {
+    if (this.props.auth.isAuthenticated) {
+      return <Redirect to="/dashboard" />;
+    }
     return (
       <div className="authentication modern animated fadeIn">
         <div className="background-holder ">

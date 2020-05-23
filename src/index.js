@@ -8,10 +8,10 @@ import { ApolloClient } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
-import RootReducer from "./state/authentication/reducers/RootReducer";
+import { store, persistor } from "./store";
 import registerServiceWorker from "./registerServiceWorker";
 /*APOLLO CLIENT */
 const cache = new InMemoryCache();
@@ -27,12 +27,6 @@ const client = new ApolloClient({
   link,
 });
 /* REDUX CLIENT */
-const initStore = {};
-const store = createStore(
-  RootReducer,
-  initStore,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 ReactDOM.render(
   <ApolloProvider client={client}>
