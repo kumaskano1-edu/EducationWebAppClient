@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import "../../styles/constants.css";
 import "../../styles/auth.css";
 import Login from "./snippets/Login";
-import { Redirect } from "react-router-dom";
-
 import Register from "./snippets/Register";
-import { connect } from "react-redux";
 
 class Authentication extends Component {
   constructor(props) {

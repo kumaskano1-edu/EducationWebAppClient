@@ -1,12 +1,9 @@
 import React from "react";
 import { Mutation } from "react-apollo";
-import { LOGIN } from "../../../state/authentication/authenticationConstants";
+import { LOGIN } from "../../../state/apollo/authenticationConstants";
 import { connect } from "react-redux";
 
-import {
-  Authenticated,
-  Loading,
-} from "../../../state/authentication/actions/Authentication";
+import { Authenticated, Loading } from "../../../state/actions/Authentication";
 class Login extends React.Component {
   constructor(props) {
     super(props);

@@ -9,9 +9,8 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
-import { store, persistor } from "./store";
+import { store } from "./store";
 import registerServiceWorker from "./registerServiceWorker";
 /*APOLLO CLIENT */
 const cache = new InMemoryCache();

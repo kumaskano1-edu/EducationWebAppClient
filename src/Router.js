@@ -18,7 +18,7 @@ class Router extends React.Component {
   render() {
     return (
       <Switch>
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/" component={Dashboard} />
         <Route exact path="/auth" component={Authentication} />
         <PrivateRoute path="/tasks" component={Tasks} />
         <PrivateRoute path="/subject" component={SubjectPage} />

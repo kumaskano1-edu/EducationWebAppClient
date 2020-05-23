@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import RootReducer from "./state/authentication/reducers/RootReducer";
+import RootReducer from "./state/reducers/RootReducer";
 const persistConfig = {
   key: "auth",
   storage: storage,
