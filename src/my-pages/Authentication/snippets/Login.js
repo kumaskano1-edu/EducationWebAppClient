@@ -1,10 +1,13 @@
 import React from "react";
-import { Mutation, Query } from "react-apollo";
+import { Mutation } from "react-apollo";
 import { Redirect } from "react-router-dom";
+import { LOGIN } from "../../../state/authentication/authenticationConstants";
+import { connect } from "react-redux";
+
 import {
-  LOGIN,
-  IS_AUTHENTICATED,
-} from "../../../state/authentication/authenticationConstants";
+  Authenticated,
+  Loading,
+} from "../../../state/authentication/actions/Authentication";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +16,10 @@ class Login extends React.Component {
       password: "",
       registrationError: null,
       loading: false,
-      authenticated: false,
     };
   }
   handleButton() {
     this.setState({ loading: true });
-    console.log(this.state.loading);
   }
   handleChange(e) {
     const { value, name } = e.target;
@@ -26,30 +27,32 @@ class Login extends React.Component {
       [name]: value,
     });
   }
-
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.state.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
   render() {
-    if (this.state.authenticated) {
+    if (this.props.state.auth.isAuthenticated) {
       return <Redirect to="/dashboard" />;
     }
     const errorMessage =
       this.state.registrationError != null ? "d-block" : "d-none";
     return (
       <div className="form-items modern">
-        <Query query={IS_AUTHENTICATED}>
-          {({ loading, error, data }) => {
-            return null;
-          }}
-        </Query>
         <div>
           <Mutation
             mutation={LOGIN}
-            onStart={(loading) => {
-              this.setState({ loading: true });
-              console.log(this.state.loading);
-            }}
             onCompleted={(data) => {
+              this.setState({ loading: false });
               localStorage.setItem("token", data.loginUser.token);
-              this.setState({ loading: false, authenticated: true });
+              this.props.auth({
+                id: data.loginUser.id,
+                token: data.loginUser.token,
+                email: this.state.email,
+                password: this.state.password,
+              });
             }}
             onError={(error) => {
               this.setState({
@@ -146,4 +149,10 @@ class Login extends React.Component {
     );
   }
 }
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    auth: (user) => dispatch(Authenticated(user)),
+    load: () => dispatch(Loading()),
+  };
+};
+export default connect(null, mapDispatchToProps)(Login);

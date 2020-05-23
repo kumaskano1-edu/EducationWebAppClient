@@ -3,10 +3,13 @@ import "../../styles/constants.css";
 import "../../styles/auth.css";
 import Login from "./snippets/Login";
 import Register from "./snippets/Register";
+import { connect } from "react-redux";
+
 class Authentication extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      ...props,
       login: true,
     };
   }
@@ -34,7 +37,11 @@ class Authentication extends Component {
                   <p className="mb-4 greyFont">
                     Acess the most powerful technology for student life
                   </p>{" "}
-                  {this.state.login ? <Login /> : <Register />}
+                  {this.state.login ? (
+                    <Login state={this.state} />
+                  ) : (
+                    <Register state={this.state} />
+                  )}
                 </div>
               </div>
             </div>
@@ -42,14 +49,16 @@ class Authentication extends Component {
               {this.state.login ? (
                 <span>
                   Dont have an account?{" "}
-                  <a onClick={() => this.setState({ login: false })}>
+                  <a href="/#" onClick={() => this.setState({ login: false })}>
                     Register
                   </a>
                 </span>
               ) : (
                 <span>
                   Already have an account?{" "}
-                  <a onClick={() => this.setState({ login: true })}>Login</a>
+                  <a href="/#" onClick={() => this.setState({ login: true })}>
+                    Login
+                  </a>
                 </span>
               )}
             </div>
@@ -59,5 +68,8 @@ class Authentication extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
-export default Authentication;
+export default connect(mapStateToProps, null)(Authentication);
