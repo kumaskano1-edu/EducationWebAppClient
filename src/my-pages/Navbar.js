@@ -40,7 +40,7 @@ export default class Navbar extends Component {
 
     return (
       <Router>
-        <div className="">
+        <div className="bg-white nav-fixed">
           <MDBNavbar className="navi border-bottom " expand="lg">
             <MDBNavbarBrand href="#">
               <img

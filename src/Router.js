@@ -6,7 +6,7 @@ import ProfileSettings from "./my-pages/ProfileSettings/ProfileSettings";
 //import Register from "./my-pages/Authentication/snippets/Register";
 import SubjectPage from "./my-pages/SubjectPage/SubjectPage";
 import Tasks from "./my-pages/Tasks/Tasks";
-
+import Navigation from "./my-pages/Navigation";
 import StatisticPage from "./my-pages/Statistics/Statistics";
 class Router extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Router extends React.Component {
   render() {
     return (
       <Switch>
-        <Route path="/" component={Dashboard} />
+        <Route path="/" component={Navigation} />
         <Route exact path="/auth" component={Authentication} />
         <PrivateRoute path="/tasks" component={Tasks} />
         <PrivateRoute path="/subject" component={SubjectPage} />

@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
+
+* {
+  transition: all 0.5s;
+}
+
+body {
+  background: #e1ecf2;
+}
+
+.wrapper .top_navbar {
+  height: 60px;
+  width: 90%;
+  z-index: 0;
+}
+
+.wrapper .sidebar {
+  position: fixed;
+  width: 10%;
+  background: #2e4ead !important;
+  height: 100vh;
+}
+
+.wrapper .top_navbar .top_menu {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .top_navbar .top_menu .logo {
+  color: #2e4ead;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.wrapper .top_navbar .top_menu ul {
+  display: flex;
+}
+
+.wrapper .top_navbar .top_menu ul li a {
+  display: block;
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #2e4ead;
+  border-radius: 50%;
+  color: #2e4ead;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover {
+  background: #4360b5;
+  color: #fff;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover i {
+  color: #fff;
+}
+
+.wrapper .sidebar ul {
+  list-style: none;
+  padding: 0%;
+  margin-top: 10vh;
+}
+
+.wrapper .sidebar ul li a {
+  list-style-type: none;
+  display: block;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 1px;
+  color: #92a6e2;
+  white-space: nowrap;
+}
+
+.wrapper .sidebar ul li a:before {
+  text-decoration: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #92a6e2;
+  display: none;
+}
+
+.wrapper .sidebar ul li a span.icon {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a span.title {
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active {
+  background: #4360b5;
+  color: #fff;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before {
+  display: block;
+}
+
+.wrapper .main_container {
+  width: (100% - 200px);
+  margin-left: 10%;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .main_container .item {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.wrapper.collapsable .top_navbar {
+  width: 100%;
+}
+
+.wrapper.collapsable .sidebar {
+  width: 70px;
+}
+
+.wrapper .collapsable .hamburger {
+  width: 70px;
+}
+
+.wrapper.collapsable .sidebar ul li a {
+  text-align: center;
+}
+
+.wrapper.collapsable .sidebar .hamburger i {
+  position: ;
+}
+
+.wrapper.collapsable .sidebar ul li a span.icon {
+  margin: 0;
+}
+
+.wrapper.collapsable .sidebar ul li a span.title {
+  display: none;
+}
+
+.wrapper.collapsable .main_container {
+  width: (100% - 70px);
+  margin-left: 70px;
+}
