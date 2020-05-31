@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { MDBRow, MDBCol } from "mdbreact";
-import Navbar from "../Navbar";
 import SmallCalendar from "./snippets/SmallCalendar";
 import Projects from "./snippets/Projects";
 import DashboardChart from "./snippets/DashboardChart";
@@ -17,6 +16,7 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
+      colors: ["#f7d050", "#a6e3ed", "#f7d050"],
       Projects: [
         {
           title: "Physics Project For Today",
@@ -102,64 +102,15 @@ class Dashboard extends Component {
     const week2 = [1, 12, 10, 16, 12, 12, 1];
     return (
       <div className="dashboard-body">
-        <Navbar />
-
         <div className="col-md-12">
-          <MDBRow>
-            <MDBCol lg="9" className="mainDashboard">
-              <MDBRow className="LeftSide">
-                <MDBCol lg="5">
-                  <div className="h-100">
-                    {/*INTRODUCTION BOX*/}
-                    <div className="introBox pt-4">
-                      <IntroBox name="Kurmanbek" />
-                    </div>
-                    {/* PROJECTS SECTION */}
-                    <div className="projects">
-                      <Projects Projects={this.state.Projects} />
-                    </div>
-                    {/* EXAMS SCHEDULE */}
-                    <div className="Exams">
-                      <ExamSchedule Exams={this.state.Exams} />
-                    </div>
-                  </div>
-                </MDBCol>
-                <MDBCol lg="7">
-                  <div className="h-100">
-                    {/* CHARTS FOR THE ANALYSIS */}
-                    <div className="charts pt-3">
-                      <TittleExpansion title="Your Activity" info />
-                      <DashboardChart thisWeek={week1} lastWeek={week2} />
-                    </div>
-                    {/* ASSIGNMENTS DONE AND DOING  */}
-                    <Todos Todos={this.state.Todos} />
-                  </div>
-                </MDBCol>
-              </MDBRow>
-            </MDBCol>
-            {/* LEFT SIDE OF THE DASHBOARD */}
-            <MDBCol lg="3" className="border-left">
-              <MDBRow>
-                {/* Small Calendar Widget */}
-
-                <MDBCol
-                  sm="12"
-                  md="4"
-                  lg="12"
-                  xl="12"
-                  className="border-bottom "
-                >
-                  <SmallCalendar />
-                  {/* My Subjects */}
-                </MDBCol>
-                <MDBCol sm="12" md="8" lg="12" xl="12" className="">
-                  <div className="Subject-cards p-2">
-                    <Subjects />
-                  </div>
-                </MDBCol>
-              </MDBRow>
-            </MDBCol>
-          </MDBRow>
+          <div className="row">
+            <div className="col-md-9 main-content">
+              <div className="projects-section bg-danger">
+                <Projects />
+              </div>
+            </div>
+            <div className="col-md-3 bg-primary todays-agenda">d</div>
+          </div>
         </div>
       </div>
     );

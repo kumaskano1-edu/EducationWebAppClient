@@ -16,61 +16,32 @@ class Projects extends Component {
     };
   }
   render() {
-    const colors = ["#f7d050", "#a6e3ed", "#f7d050"];
-
-    const ProjectsInput = this.state.Projects;
     return (
-      <div className="Projects modern">
-        <TittleExpansion title="Projects" />
-        <MDBRow className="project modern p-2">
-          {ProjectsInput.map((project) => {
-            return Project(project, colors);
-          })}
-        </MDBRow>
+      <div className="projects-viewer-wrapper">
+        <div className="inner-elements-projects-section col-md-12">
+          <div className="row inner">
+            <div class="add-projects py-5 col-sm-4 col-md-5">
+              <h5 class="">Add Assignment</h5>
+              <p class="">
+                This is a modified jumbotron that occupies the entire horizontal
+                space of its parent.
+              </p>
+              <form className="d-inline-block">
+                <div class="button-extended-icon add-projects-button ">
+                  <button className="btn bg-danger">
+                    {" "}
+                    <i class="fas fa-plus"></i>
+                  </button>
+                  <span class="button-extended-icon-label ">ADD IT!</span>
+                </div>
+              </form>
+            </div>
+            <div className="existing-projects col-md-8"></div>
+          </div>
+        </div>
       </div>
     );
   }
 }
-const Project = (props, colors) => {
-  props.count = props.count >= colors.length ? 0 : props.count;
-  return (
-    <MDBCol sm="12" md="6" lg="12" className="">
-      <div className="projectPorgress shadow-sm hoverable modern  p-3 ">
-        <div className="progressBar float-left">
-          <CircularProgressbarWithChildren
-            value={props.percentage}
-            strokeWidth={6}
-            styles={buildStyles({
-              pathColor: colors[props.count],
-            })}
-          >
-            <RadialSeparators
-              count={12}
-              style={{
-                background: "#fff",
-
-                width: "2px",
-                // This needs to be equal to props.strokeWidth
-                height: `${10}%`,
-              }}
-            />
-            <div style={{ fontSize: 21, marginTop: -5 }}>
-              <strong>{props.percentage + "%"}</strong>
-            </div>
-          </CircularProgressbarWithChildren>
-        </div>
-        <div className="ProjectInfo float-right">
-          <h6 className="ProjectTittle titleFont">
-            <strong>{props.title}</strong>
-          </h6>
-          <p className="ProjectSubjects greyFont">
-            {props.subject}, {DateDifference(props.dueDate)}
-          </p>
-          <p className="ProjectDescription"> {props.description} </p>
-        </div>
-      </div>
-    </MDBCol>
-  );
-};
 
 export default Projects;
