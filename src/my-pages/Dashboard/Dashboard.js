@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import dummyData from "../../state/dummyData";
 import Projects from "./snippets/Projects";
 import AddAssignment from "./snippets/AddAssignment";
 import "react-circular-progressbar/dist/styles.css";
 import "../../styles/dashboard.css";
-
+import { connect } from "react-redux";
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...dummyData,
+      ...props,
     };
   }
+
   render() {
     // const week1 = [1, 12, 14, 16, 12, 12, 1];
     // const week2 = [1, 12, 10, 16, 12, 12, 1];
@@ -30,8 +30,13 @@ class Dashboard extends Component {
                       </div>
                       <div className="show-projects py-3 col-sm-8 col-md-9">
                         <div className="row">
-                          {this.state.Projects.map((elem) => {
-                            return <Projects />;
+                          {this.state.personal.Projects.map((elem) => {
+                            return (
+                              <Projects
+                                key={elem.projectId}
+                                properties={elem}
+                              />
+                            );
                           })}
                         </div>
                       </div>
@@ -47,4 +52,8 @@ class Dashboard extends Component {
     );
   }
 }
-export default Dashboard;
+const mapStateToProps = (state) => ({
+  personal: state.personal,
+});
+
+export default connect(mapStateToProps, null)(Dashboard);

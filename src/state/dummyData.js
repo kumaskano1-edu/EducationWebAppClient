@@ -2,6 +2,7 @@ const dummyData = {
   colors: ["#f7d050", "#a6e3ed", "#f7d050"],
   Projects: [
     {
+      projectId: 1,
       title: "Physics Project For Today",
       percentage: "55",
       subject: "Physics",
@@ -10,6 +11,7 @@ const dummyData = {
       count: 0,
     },
     {
+      projectId: 2,
       title: "Mathematics Project Project For Today",
       percentage: "55",
       subject: "Mathematics",
@@ -18,6 +20,7 @@ const dummyData = {
       count: 1,
     },
     {
+      projectId: 3,
       title: "Mathematics Project Project For Today",
       percentage: "55",
       subject: "Mathematics",

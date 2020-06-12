@@ -4,9 +4,7 @@ class Projects extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      ...this.props,
-    };
+    this.state = {};
   }
   render() {
     return (
@@ -16,8 +14,8 @@ class Projects extends Component {
             <h2 className="text-left">
               <i className="fa fa-cart-plus f-left"></i>
             </h2>
-            <p class="m-b-0 ">
-              Completed Orders<span className="f-right">351</span>
+            <p className="m-b-0 ">
+              <span className="f-right"> {this.props.properties.title}</span>
             </p>
           </div>
         </div>
