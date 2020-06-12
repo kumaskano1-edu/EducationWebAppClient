@@ -56,7 +56,7 @@ export default class Navbar extends Component {
               onClick={this.toggleCollapse("mainNavbarCollapse")}
             />
             <MDBCollapse id="mainNavbarCollapse" isOpen={collapseID} navbar>
-              <MDBNavbarNav center className="naviLinks">
+              <MDBNavbarNav center="true" className="naviLinks">
                 <MDBNavItem>
                   <MDBNavLink
                     activeClassName="activeLink bounceIn"
@@ -129,7 +129,7 @@ export default class Navbar extends Component {
                       />{" "}
                       Kurmanbek
                     </MDBDropdownToggle>
-                    <MDBDropdownMenu className="dropdown-default" left>
+                    <MDBDropdownMenu className="dropdown-default" left="true">
                       <MDBDropdownItem href="#!" className="modern">
                         My account
                       </MDBDropdownItem>

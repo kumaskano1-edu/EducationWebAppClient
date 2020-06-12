@@ -40,7 +40,7 @@
 
 /*PROJECTS PAGE*/
 .projects-section {
-  height: 40%;
+  height: 50%;
 }
 
 .inner-elements-projects-section {}
@@ -62,6 +62,10 @@
 .add-project-button-text {
   font-size: 1.2vw;
 
+}
+
+.project-card {
+  height: 40vh;
 }
 
 /*EXAM CARDS*/
