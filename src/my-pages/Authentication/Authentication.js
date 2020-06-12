@@ -17,7 +17,7 @@ class Authentication extends Component {
   loginOrRegister() {}
   render() {
     if (this.props.auth.isAuthenticated) {
-      return <Redirect to="/" />;
+      return <Redirect to="/dashboard" />;
     }
     return (
       <div className="authentication modern animated fadeIn">
