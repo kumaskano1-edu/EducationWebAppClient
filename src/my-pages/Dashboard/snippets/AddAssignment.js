@@ -18,7 +18,12 @@ class AddAssignment extends Component {
         </p>
         <form className="d-inline-block">
           <div className="button-extended-icon add-projects-button ">
-            <button className="btn bg-danger">
+            <button
+              className="btn bg-danger"
+              type="button"
+              data-toggle="modal"
+              data-target="#ModalFade"
+            >
               {" "}
               <i className="fas fa-plus"></i>
             </button>

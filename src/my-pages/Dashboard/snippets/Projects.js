@@ -8,8 +8,12 @@ class Projects extends Component {
   }
   render() {
     return (
-      <div className="col-md-4">
-        <div className="card p-3 bg-c-blue project-card">
+      <div
+        className="Single-Project"
+        data-toggle="modal"
+        data-target="#TaskViewModal"
+      >
+        <div className="card bg-c-blue project-card">
           <div className="card-block">
             <h2 className="text-left">
               <i className="fa fa-cart-plus f-left"></i>
