@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import AddTask from "../../GlobalSnippets/AddTask";
 class AddAssignment extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ class AddAssignment extends Component {
               className="btn bg-danger"
               type="button"
               data-toggle="modal"
-              data-target="#ModalFade"
+              data-target="#AddTask"
             >
               {" "}
               <i className="fas fa-plus"></i>
@@ -30,6 +30,7 @@ class AddAssignment extends Component {
             <span className="button-extended-icon-label ">ADD IT!</span>
           </div>
         </form>
+        <AddTask />
       </div>
     );
   }

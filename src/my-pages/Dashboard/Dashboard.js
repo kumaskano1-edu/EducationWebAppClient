@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Projects from "./snippets/Projects";
 import AddAssignment from "./snippets/AddAssignment";
-import Modal from "../GlobalSnippets/Modal";
 import "react-circular-progressbar/dist/styles.css";
 import "../../styles/dashboard.css";
 import { connect } from "react-redux";
@@ -28,7 +27,6 @@ class Dashboard extends Component {
                     <div className="row inner">
                       <div className="add-projects py-5 col-sm-12 col-md-3">
                         <AddAssignment />
-                        <Modal />
                       </div>
                       <div className="show-projects py-3 col-sm-8 col-md-9">
                         <div className="row">
