@@ -1,149 +1,111 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBNavItem,
-  MDBNavLink,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-} from "mdbreact";
+import { NavLink } from "react-router-dom";
 import "../styles/navbar.css";
 import "../styles/constants.css";
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      collapseID: "",
-    };
+    this.state = {};
   }
 
-  toggleCollapse = (collapseID) => () =>
-    this.setState((prevState) => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : "",
-    }));
-
-  closeCollapse = (collID) => () => {
-    const { collapseID } = this.state;
-    window.scrollTo(0, 0);
-    collapseID === collID && this.setState({ collapseID: "" });
-  };
-
   render() {
-    const { collapseID } = this.state;
-
     return (
-      <Router>
-        <div className="bg-white nav-fixed fixed-top">
-          <MDBNavbar className="navi border-bottom" expand="lg">
-            <MDBNavbarBrand href="#">
+      <div className="navigation  border-bottom modern">
+        <nav className="navbar navbar-expand-lg navbar-light shadow-none">
+          <div className="container-fluid navigation-inner-container">
+            <a className="navbar-brand" href="dashboard">
               <img
                 src={process.env.PUBLIC_URL + "/vector/default-monochrome.svg"}
                 height="30"
-                alt=""
+                alt="logo"
               />
-            </MDBNavbarBrand>
-            <MDBNavbarToggler
-              color="black"
-              image="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg"
-              className="hamburger"
-              onClick={this.toggleCollapse("mainNavbarCollapse")}
-            />
-            <MDBCollapse id="mainNavbarCollapse" isOpen={collapseID} navbar>
-              <MDBNavbarNav center="true" className="naviLinks">
-                <MDBNavItem>
-                  <MDBNavLink
-                    activeClassName="activeLink bounceIn"
-                    exact
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarText"
+              aria-controls="navbarText"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarText">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <NavLink
+                    activeClassName="nav-link-active bounce-in-fwd"
+                    className="nav-link"
                     to="dashboard"
-                    className="NavbarLink"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
                   >
-                    <strong className="modern">Dashboard</strong>
-                  </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink
-                    activeClassName="activeLink bounceIn"
-                    exact
-                    to="Calendar"
-                    className="NavbarLink"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                  >
-                    <strong className="modern">Calendar</strong>
-                  </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink
-                    activeClassName="activeLink bounceIn"
-                    exact
-                    to="subject"
-                    className="NavbarLink"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                  >
-                    <strong className="modern">Subjects</strong>
-                  </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink
-                    activeClassName="activeLink bounceIn"
-                    exact
-                    to="tasks"
-                    className="NavbarLink"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                  >
-                    <strong className="modern">Tasks</strong>
-                  </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink
-                    activeClassName="activeLink bounceIn"
-                    exact
+                    Home
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    activeClassName="bounce-in nav-link-active"
+                    className="nav-link"
                     to="statistics"
-                    className="NavbarLink"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
                   >
-                    <strong className="modern">Statistics</strong>
-                  </MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-              <MDBNavbarNav right>
-                <MDBNavItem>
-                  <MDBDropdown>
-                    <MDBDropdownToggle
-                      nav
-                      caret
-                      className="avatar NavbarLink modern"
-                    >
-                      <img
-                        src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg"
-                        className="rounded-circle z-depth-0 mr-auto pr-1"
-                        style={{ height: "35px", padding: 0 }}
-                        alt="Kurmanbek"
-                      />{" "}
-                      Kurmanbek
-                    </MDBDropdownToggle>
-                    <MDBDropdownMenu className="dropdown-default" left="true">
-                      <MDBDropdownItem href="#!" className="modern">
-                        My account
-                      </MDBDropdownItem>
-                      <MDBDropdownItem href="#!" className="modern">
-                        Log out
-                      </MDBDropdownItem>
-                    </MDBDropdownMenu>
-                  </MDBDropdown>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
-        </div>
-      </Router>
+                    Statistics
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    activeClassName="bounce-in nav-link-active"
+                    className="nav-link"
+                    to="subjects"
+                  >
+                    Subjects
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    activeClassName="bounce-in nav-link-active"
+                    className="nav-link"
+                    to="tasks"
+                  >
+                    Tasks
+                  </NavLink>
+                </li>
+              </ul>
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item dropdown">
+                  <div
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="../assets/media/Avatar-PNG-Download-Image.png"
+                      alt="Avatar"
+                      height="30"
+                      className="avatar rounded"
+                    />
+                    Hi, Kurmabek
+                  </div>
+                  <div
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <div className="dropdown-item">Edit Profile</div>
+                    <div className="dropdown-item" href="#">
+                      Log Out
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <Router />
+      </div>
     );
   }
 }

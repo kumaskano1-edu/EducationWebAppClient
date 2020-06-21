@@ -11,7 +11,9 @@ class Dashboard extends Component {
       ...props,
     };
   }
-
+  componentDidMount() {
+    this.setState({ ...this.props });
+  }
   render() {
     // const week1 = [1, 12, 14, 16, 12, 12, 1];
     // const week2 = [1, 12, 10, 16, 12, 12, 1];
@@ -30,7 +32,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="show-projects py-3 col-sm-8 col-md-9">
                         <div className="row">
-                          {this.state.personal.Projects.map((elem) => {
+                          {this.props.personal.Projects.map((elem) => {
                             return (
                               <Projects
                                 key={elem.projectId}

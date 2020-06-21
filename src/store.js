@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import RootReducer from "./state/reducers/RootReducer";
 const persistConfig = {
-  key: "auth",
+  key: "auth, personal",
   storage: storage,
 };
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

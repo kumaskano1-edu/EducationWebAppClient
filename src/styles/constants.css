@@ -1,8 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Comic+Neue:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Comic+Neue:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
 /*Fonts*/
 .modern {
   font-family: "Baloo Thambi 2", cursive;
+}
+
+.primary-font {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 /*FONT WEIGHT*/
@@ -33,7 +38,28 @@
   color: white;
 }
 
+.violet-color {
+  color: #555CC8;
+}
+
 /*Backgrounds*/
+
+.violet-bg {
+  background-image: linear-gradient(109.6deg, rgba(125, 89, 252, 0.8) 11.2%, #7279ff 91.1%);
+}
+
+.yellow-bg {
+  background-color: #FFC756;
+}
+
+.blue-bg {
+  background-color: #74ECFB;
+}
+
+.light-green-bg {
+  background-color: #A4DCB4;
+}
+
 .primaryTheme {
   background-image: linear-gradient(109.6deg, rgba(125, 89, 252, 0.8) 11.2%, #7279ff 91.1%);
 }
@@ -49,7 +75,7 @@
   cursor: pointer;
 }
 
-/*Dropdown none */
+/*Dropdown Classes */
 
 .dropleft .dropdown-toggle::before {
   display: none;
@@ -58,3 +84,8 @@
 .dropdown-toggle:after {
   display: none;
 }
+
+/*Animation Classes*/
+
+
+/*Animation Keyframes*/
