@@ -1,2 +1,3 @@
-What I have to do:
-    Make modal show all the information within the card
+Goals
+    -Animate pages
+    -Start working on different snippets

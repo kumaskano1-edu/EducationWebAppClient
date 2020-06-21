@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dashboard from "./my-pages/Dashboard/Dashboard";
 import Authentication from "./my-pages/Authentication/Authentication";
 import ProfileSettings from "./my-pages/ProfileSettings/ProfileSettings";
