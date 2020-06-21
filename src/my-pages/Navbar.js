@@ -83,10 +83,11 @@ export default class Navbar extends Component {
                     aria-expanded="false"
                   >
                     <img
-                      src="../assets/media/Avatar-PNG-Download-Image.png"
+                      src={process.env.PUBLIC_URL + "/media/avatar.png"}
                       alt="Avatar"
-                      height="30"
-                      className="avatar rounded"
+                      height="25"
+                      width="25"
+                      className="rounded"
                     />
                     Hi, Kurmabek
                   </div>
