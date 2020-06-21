@@ -8,6 +8,7 @@ import ProfileSettings from "./my-pages/ProfileSettings/ProfileSettings";
 import SubjectPage from "./my-pages/SubjectPage/SubjectPage";
 import Tasks from "./my-pages/Tasks/Tasks";
 import StatisticPage from "./my-pages/Statistics/Statistics";
+import "./styles/navbar.css";
 class Router extends React.Component {
   constructor(props) {
     super();
@@ -17,19 +18,27 @@ class Router extends React.Component {
   }
   render() {
     return (
-      <Switch>
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <Route exact path="/auth" component={Authentication} />
-        <PrivateRoute path="/tasks" component={Tasks} />
-        <PrivateRoute path="/subject" component={SubjectPage} />
-        <PrivateRoute path="/statistics" component={StatisticPage} />
-        <PrivateRoute path="/profile" component={ProfileSettings} />
-        <Route
-          render={function () {
-            return <h1>Not Found</h1>;
-          }}
-        />
-      </Switch>
+      <Route
+        render={({ location }) => (
+          <TransitionGroup>
+            <CSSTransition key={location.key} timeout={3000} classNames="fade">
+              <Switch location={location}>
+                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <Route exact path="/auth" component={Authentication} />
+                <PrivateRoute path="/tasks" component={Tasks} />
+                <PrivateRoute path="/subject" component={SubjectPage} />
+                <PrivateRoute path="/statistics" component={StatisticPage} />
+                <PrivateRoute path="/profile" component={ProfileSettings} />
+                <Route
+                  render={function () {
+                    return <h1>Not Found</h1>;
+                  }}
+                />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+      />
     );
   }
 }

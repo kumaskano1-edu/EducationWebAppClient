@@ -11,7 +11,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <div className="navigation  border-bottom modern">
+      <div className="navigation fixed-top bg-white border-bottom modern">
         <nav className="navbar navbar-expand-lg navbar-light shadow-none">
           <div className="container-fluid navigation-inner-container">
             <a className="navbar-brand" href="dashboard">

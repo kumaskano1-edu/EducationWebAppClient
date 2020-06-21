@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Projects from "./snippets/Projects";
 import AddAssignment from "./snippets/AddAssignment";
-import "react-circular-progressbar/dist/styles.css";
 import "../../styles/dashboard.css";
 import { connect } from "react-redux";
 class Dashboard extends Component {
